@@ -3,8 +3,8 @@ module.exports = {
   secretKey: 'ruKTqnwTdWv3YRSNEdwl2kWHZSkSgcYg',
   packageName: 'org.isayme.demo',
   channel_ids: [
-    '4504997744813949923',
-    '4285607900210990068'
+    '4285607900210990068',
+    '4504997744813949923'
   ],
   print: function(err, data) {
     console.log(JSON.stringify(arguments, null, 2));
