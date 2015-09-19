@@ -24,8 +24,8 @@
   },
   "homepage": "https://github.com/isayme/node-baidu-push#readme",
   "devDependencies": {
-    "chai": "^3.2.0",
-    "mocha": "^2.3.2"
+    "mocha": "^2.3.2",
+    "should": "^7.1.0"
   },
   "dependencies": {
     "lodash": "^3.10.1",
