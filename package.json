@@ -1,10 +1,10 @@
 {
   "name": "node-baidu-push",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "百度推送(v3)SDK",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha --no-timeouts"
   },
   "repository": {
     "type": "git",
