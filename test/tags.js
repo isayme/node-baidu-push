@@ -94,9 +94,10 @@ describe('BaiduPushClient add/delete device to tag', function() {
     });
   });
 
-  it('shuold ok query device of tag', function(done) {
+  it('shuold return 0/-1 device of tag', function(done) {
     client.queryDeviceNumInTag('tagName', function(err, data) {
       should.equal(err, null);
+      should.equal(data.device_num, -1);
       done();
     });
   });
@@ -108,8 +109,23 @@ describe('BaiduPushClient add/delete device to tag', function() {
     });
   });
 
+  it('shuold return 2 device of tag', function(done) {
+    client.queryDeviceNumInTag('tagName', function(err, data) {
+      should.equal(err, null);
+      // should.equal(data.device_num, 2);
+      done();
+    });
+  });
+
   it('shuold ok when delete device to tag', function(done) {
     client.deleteDevicesFromTag('tagName', config.channel_ids, function(err, data) {
+      should.equal(err, null);
+      done();
+    });
+  });
+
+  it('shuold return 0/-1 device of tag', function(done) {
+    client.queryDeviceNumInTag('tagName', function(err, data) {
       should.equal(err, null);
       done();
     });
