@@ -4,7 +4,13 @@ var Client = require('../lib/client');
 
 client = new Client(config.apiKey, config.secretKey);
 
-describe('BaiduPushClient::createTag', function() {
+describe('BaiduPushClient tag create/delete/query', function() {
+  before(function(done) {
+    client.deleteTag('tagName', function(err, data) {
+      done();
+    });
+  });
+
   it('should has 1 tag by defaults', function(done) {
     client.queryTags(function(err, data) {
       should.equal(data.total_num, 1);
@@ -75,6 +81,43 @@ describe('BaiduPushClient::createTag', function() {
   it('should fail create default tag', function(done) {
     client.createTag('default', function(err, data) {
       should.exist(err);
+      done();
+    });
+  });
+});
+
+describe('BaiduPushClient add/delete device to tag', function() {
+  before(function(done) {
+    client.createTag('tagName', function(err, data) {
+      should.equal(data.tag, 'tagName');
+      done();
+    });
+  });
+
+  it('shuold ok query device of tag', function(done) {
+    client.queryDeviceNumInTag('tagName', function(err, data) {
+      should.equal(err, null);
+      done();
+    });
+  });
+
+  it('shuold ok when add device to tag', function(done) {
+    client.addDevicesToTag('tagName', config.channel_ids, function(err, data) {
+      should.equal(err, null);
+      done();
+    });
+  });
+
+  it('shuold ok when delete device to tag', function(done) {
+    client.deleteDevicesFromTag('tagName', config.channel_ids, function(err, data) {
+      should.equal(err, null);
+      done();
+    });
+  });
+
+  after(function(done) {
+    client.deleteTag('tagName', function(err, data) {
+      should.equal(data.tag, 'tagName');
       done();
     });
   });
