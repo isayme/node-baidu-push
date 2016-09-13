@@ -4,7 +4,7 @@ var signKey = require('../lib/sign');
 describe('signKey', function() {
   var result = '7d14113142e2a1583b4e9dad3fba73d0';
 
-  it('shuold sign ok', function() {
+  it('should sign ok', function() {
     var url = 'http://api.tuisong.baidu.com/rest/3.0/test/echo';
     var secretKey = '87772555E1C16715EBA5C85341684C58';
     var param = {
@@ -17,7 +17,7 @@ describe('signKey', function() {
     should.equal(sign, result);
   });
 
-  it('shuold sign ok even change param sort', function() {
+  it('should sign ok even change param sort', function() {
     var url = 'http://api.tuisong.baidu.com/rest/3.0/test/echo';
     var secretKey = '87772555E1C16715EBA5C85341684C58';
     var param = {

@@ -21,7 +21,7 @@ describe('queryMsgStatus', function() {
 });
 
 describe('queryTimerList', function() {
-  it('shuold return ok', function(done) {
+  it('should return ok', function(done) {
     client.queryTimerList(function(err, data) {
       should(data.result).Array();
       done();
@@ -30,7 +30,7 @@ describe('queryTimerList', function() {
 });
 
 describe('queryTopicList', function() {
-  it('shuold return ok', function(done) {
+  it('should return ok', function(done) {
     client.queryTopicList(function(err, data) {
       should(data.result).Array();
       done();

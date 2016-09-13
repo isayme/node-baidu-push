@@ -94,7 +94,7 @@ describe('BaiduPushClient add/delete device to tag', function() {
     });
   });
 
-  it('shuold return 0/-1 device of tag', function(done) {
+  it('should return 0/-1 device of tag', function(done) {
     client.queryDeviceNumInTag('tagName', function(err, data) {
       should.equal(err, null);
       should.equal(data.device_num, -1);
@@ -102,14 +102,14 @@ describe('BaiduPushClient add/delete device to tag', function() {
     });
   });
 
-  it('shuold ok when add device to tag', function(done) {
+  it('should ok when add device to tag', function(done) {
     client.addDevicesToTag('tagName', config.channel_ids, function(err, data) {
       should.equal(err, null);
       done();
     });
   });
 
-  it('shuold return 2 device of tag', function(done) {
+  it('should return 2 device of tag', function(done) {
     client.queryDeviceNumInTag('tagName', function(err, data) {
       should.equal(err, null);
       // should.equal(data.device_num, 2);
@@ -117,14 +117,14 @@ describe('BaiduPushClient add/delete device to tag', function() {
     });
   });
 
-  it('shuold ok when delete device to tag', function(done) {
+  it('should ok when delete device to tag', function(done) {
     client.deleteDevicesFromTag('tagName', config.channel_ids, function(err, data) {
       should.equal(err, null);
       done();
     });
   });
 
-  it('shuold return 0/-1 device of tag', function(done) {
+  it('should return 0/-1 device of tag', function(done) {
     client.queryDeviceNumInTag('tagName', function(err, data) {
       should.equal(err, null);
       done();

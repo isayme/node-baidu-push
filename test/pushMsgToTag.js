@@ -18,14 +18,14 @@ describe('BaiduPushClient tag create/delete/query', function() {
   };
   var options = {msg_type: 1};
 
-  it('shuold ok when push to exist tagname', function(done) {
+  it('should ok when push to exist tagname', function(done) {
     client.pushMsgToTag('tagName', msg, options, function(err, data) {
       should.equal(err, null);
       done();
     });
   });
 
-  it('shuold fail when push to no-exist tagname', function(done) {
+  it('should fail when push to no-exist tagname', function(done) {
     client.pushMsgToTag('tagxName', msg, options, function(err, data) {
       should.exist(err);
       done();
