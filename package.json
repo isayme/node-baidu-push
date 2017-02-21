@@ -4,7 +4,7 @@
   "description": "百度推送(v3)SDK",
   "main": "index.js",
   "scripts": {
-    "test": "mocha --no-timeouts"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -25,7 +25,8 @@
   "homepage": "https://github.com/isayme/node-baidu-push#readme",
   "devDependencies": {
     "mocha": "^2.3.2",
-    "should": "^7.1.0"
+    "should": "^7.1.0",
+    "standard": "^8.6.0"
   },
   "dependencies": {
     "lodash": "^3.10.1",
