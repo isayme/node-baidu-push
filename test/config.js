@@ -6,7 +6,7 @@ module.exports = {
     '4285607900210990068',
     '4504997744813949923'
   ],
-  print: function(err, data) {
-    console.log(JSON.stringify(arguments, null, 2));
+  print: function (err, data) {
+    console.log(JSON.stringify(arguments, null, 2))
   }
-};
+}
