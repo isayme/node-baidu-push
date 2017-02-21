@@ -1,10 +1,9 @@
-var should = require('should')
 var config = require('../test/config')
 var Client = require('../lib/client')
 
-client = new Client(config.apiKey, config.secretKey)
+var client = new Client(config.apiKey, config.secretKey)
 
-var testTag = 'tagName'
+// var testTag = 'tagName'
 
 // client.deleteTag(testTag, config.print);
 

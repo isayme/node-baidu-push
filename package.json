@@ -4,7 +4,8 @@
   "description": "百度推送(v3)SDK",
   "main": "index.js",
   "scripts": {
-    "test": "mocha"
+    "test": "mocha",
+    "lint": "standard --env mocha"
   },
   "repository": {
     "type": "git",

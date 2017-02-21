@@ -44,48 +44,48 @@ describe('BaiduPushClient::constructor', function () {
 
   it('should throw if apikey is invalid', function () {
     should.throws(function () {
-      new BaiduPushClient(undefined, config.secretKey)
+      return new BaiduPushClient(undefined, config.secretKey)
     })
 
     should.throws(function () {
-      new BaiduPushClient(0, config.secretKey)
+      return new BaiduPushClient(0, config.secretKey)
     })
 
     should.throws(function () {
-      new BaiduPushClient('', config.secretKey)
+      return new BaiduPushClient('', config.secretKey)
     })
 
     should.throws(function () {
-      new BaiduPushClient({}, config.secretKey)
+      return new BaiduPushClient({}, config.secretKey)
     })
 
     should.throws(function () {
-      new BaiduPushClient({}, config.secretKey)
+      return new BaiduPushClient({}, config.secretKey)
     })
   })
 
   it('should throw if secretKey invalid', function () {
     should.throws(function () {
-      new BaiduPushClient(config.apiKey, undefined)
+      return new BaiduPushClient(config.apiKey, undefined)
     })
 
     should.throws(function () {
-      new BaiduPushClient(config.apiKey, 0)
+      return new BaiduPushClient(config.apiKey, 0)
     })
 
     should.throws(function () {
-      new BaiduPushClient(config.apiKey, '')
+      return new BaiduPushClient(config.apiKey, '')
     })
 
     should.throws(function () {
-      new BaiduPushClient(config.apiKey, {})
+      return new BaiduPushClient(config.apiKey, {})
     })
   })
 
   it('should throw if host invalid', function () {
     should.throws(function () {
-      var host = 'isayme.org'
-      new BaiduPushClient(config.apiKey, config.secretKey, host)
+      var host = 'example.com'
+      return new BaiduPushClient(config.apiKey, config.secretKey, host)
     })
   })
 })

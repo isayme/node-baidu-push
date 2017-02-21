@@ -2,13 +2,13 @@ var should = require('should')
 var config = require('./config')
 var Client = require('../lib/client')
 
-client = new Client(config.apiKey, config.secretKey)
+var client = new Client(config.apiKey, config.secretKey)
 
 describe('BaiduPushClient tag create/delete/query', function () {
   before(function (done) {
     client.createTag('tagName', function (err, data) {
       should.equal(data.tag, 'tagName')
-      done()
+      done(err)
     })
   })
 
@@ -35,7 +35,7 @@ describe('BaiduPushClient tag create/delete/query', function () {
   after(function (done) {
     client.deleteTag('tagName', function (err, data) {
       should.equal(data.tag, 'tagName')
-      done()
+      done(err)
     })
   })
 })

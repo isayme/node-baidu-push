@@ -2,7 +2,7 @@ var should = require('should')
 var config = require('./config')
 var Client = require('../lib/client')
 
-client = new Client(config.apiKey, config.secretKey)
+var client = new Client(config.apiKey, config.secretKey)
 
 describe('BaiduPushClient::pushMsgToSingleDevice', function () {
   it('should work', function (done) {

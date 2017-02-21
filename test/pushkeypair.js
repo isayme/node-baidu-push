@@ -12,37 +12,37 @@ describe('PushKeyPair::constructor', function () {
 
   it('should throw if apiKey invalid', function () {
     should.throws(function () {
-      new PushKeyPair(undefined, config.secretKey)
+      return new PushKeyPair(undefined, config.secretKey)
     })
 
     should.throws(function () {
-      new PushKeyPair(0, config.secretKey)
+      return new PushKeyPair(0, config.secretKey)
     })
 
     should.throws(function () {
-      new PushKeyPair('', config.secretKey)
+      return new PushKeyPair('', config.secretKey)
     })
 
     should.throws(function () {
-      new PushKeyPair({}, config.secretKey)
+      return new PushKeyPair({}, config.secretKey)
     })
   })
 
   it('should throw if secretKey invalid', function () {
     should.throws(function () {
-      new PushKeyPair(config.apiKey, undefined)
+      return new PushKeyPair(config.apiKey, undefined)
     })
 
     should.throws(function () {
-      new PushKeyPair(config.apiKey, 0)
+      return new PushKeyPair(config.apiKey, 0)
     })
 
     should.throws(function () {
-      new PushKeyPair(config.apiKey, '')
+      return new PushKeyPair(config.apiKey, '')
     })
 
     should.throws(function () {
-      new PushKeyPair(config.apiKey, {})
+      return new PushKeyPair(config.apiKey, {})
     })
   })
 })
